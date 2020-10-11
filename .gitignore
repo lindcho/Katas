@@ -341,3 +341,5 @@ healthchecksdb
 /BowlingGameTests/BowlingGameTests.csproj
 /BowlingGameKata/BowlingGameKata.csproj
 /BowlingGameKata.sln
+/OddEvenKataTests/SumKataTests.csproj
+/OddEvenKata/SumKata.csproj
