@@ -32,7 +32,7 @@ namespace BowlingGameTests
         }
 
         [Test]
-        public void TestAllOnes_Returns20()
+        public void TestKnockingDown1PinEachTime_Returns20()
         {
             // arrange
             var sut = new Game();
@@ -45,7 +45,7 @@ namespace BowlingGameTests
         }
 
         [Test]
-        public void TestAllTwos_TestAllOnesReturns40()
+        public void TestKnockingDown2Pins_Returns40()
         {
             // arrange
             var sut = new Game();
