@@ -27,7 +27,7 @@ namespace BowlingGameTests
             // act
             RollMany(sut, n, pins);
             // assert
-            Assert.AreEqual(0, sut.Score());
+            Assert.That(0, Is.EqualTo(sut.Score()));
 
         }
 
@@ -41,7 +41,7 @@ namespace BowlingGameTests
             const int pins = 1;
             RollMany(sut, n, pins);
             // assert
-            Assert.AreEqual(20, sut.Score());
+            Assert.That(20, Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace BowlingGameTests
             // act
             RollMany(sut, 20, 2);
             // assert
-            Assert.AreEqual(40, sut.Score());
+            Assert.That(40, Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -65,7 +65,7 @@ namespace BowlingGameTests
             sut.Roll(3);
             RollMany(sut, 17, 0);
             // assert
-            Assert.AreEqual(16, sut.Score());
+            Assert.That(16, Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -79,7 +79,7 @@ namespace BowlingGameTests
             sut.Roll(4);
             RollMany(sut, 16, 0);
             // assert
-            Assert.AreEqual(24, sut.Score());
+            Assert.That(24, Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -90,7 +90,7 @@ namespace BowlingGameTests
             // act
             RollMany(sut, 12, 10);
             // assert
-            Assert.AreEqual(300, sut.Score());
+            Assert.That(300, Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -105,7 +105,7 @@ namespace BowlingGameTests
                 sut.Roll(randomRoll);
             }
             // assert
-            Assert.AreEqual(131, sut.Score());
+            Assert.That(131,Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -120,7 +120,7 @@ namespace BowlingGameTests
                 sut.Roll(randomRoll);
             }
             // assert
-            Assert.AreEqual(143, sut.Score());
+            Assert.That(143,Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -135,7 +135,7 @@ namespace BowlingGameTests
                 sut.Roll(randomRoll);
             }
             // assert
-            Assert.AreEqual(163, sut.Score());
+            Assert.That(163,Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -150,7 +150,7 @@ namespace BowlingGameTests
                 sut.Roll(randomRoll);
             }
             // assert
-            Assert.AreEqual(163, sut.Score());
+            Assert.That(163,Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -165,7 +165,7 @@ namespace BowlingGameTests
                 sut.Roll(randomRoll);
             }
             // assert
-            Assert.AreEqual(95, sut.Score());
+            Assert.That(95, Is.EqualTo(sut.Score()));
         }
 
         [Test]
@@ -180,7 +180,7 @@ namespace BowlingGameTests
                 sut.Roll(randomRoll);
             }
             // assert
-            Assert.AreEqual(270, sut.Score());
+            Assert.That(270, Is.EqualTo(sut.Score()));
         }
 
 
