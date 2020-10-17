@@ -343,3 +343,5 @@ healthchecksdb
 /BowlingGameKata.sln
 /OddEvenKataTests/SumKataTests.csproj
 /OddEvenKata/SumKata.csproj
+/EvenOrOdd/EvenOrOdd.csproj
+/EvenOrOddTests/EvenOrOddTests.csproj
