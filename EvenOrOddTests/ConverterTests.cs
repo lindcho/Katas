@@ -17,12 +17,14 @@ namespace EvenOrOddTests
         }
 
 
-        [Test]
-        public void Given1OddNumber_ShouldPrintOddNumber()
+        [TestCase(1, "Odd")]
+        [TestCase(3, "Odd")]
+        [TestCase(5, "Odd")]
+        public void Given1OddNumber_ShouldPrintOddNumber(int number, string expected)
         {
             var sut = new Converter();
-            var result = sut.PrintOddOrEvenResult(1);
-            Assert.That(result, Is.EqualTo("Odd"));
+            var result = sut.PrintOddOrEvenResult(number);
+            Assert.That(result, Is.EqualTo(expected));
         }
     }
 }
