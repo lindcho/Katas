@@ -37,5 +37,12 @@ namespace AtmPinKataTests
             Assert.AreEqual(true, Pin.ValidatePin("000000"), "Wrong output for \"000000\"");
             Assert.AreEqual(true, Pin.ValidatePin("090909"), "Wrong output for \"090909\"");
         }
+
+        [Test, Description("ValidatePin should return False for invalid pins")]
+        public void EdgeCase()
+        {
+            Assert.AreEqual(false, Pin.ValidatePin("123 "), "Wrong output for \"123 \"");
+            Assert.AreEqual(false, Pin.ValidatePin("1234 "), "Wrong output for \"1234 \"");
+        }
     }
 }
