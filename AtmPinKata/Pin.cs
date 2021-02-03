@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace AtmPinKata
 {
@@ -6,12 +8,9 @@ namespace AtmPinKata
     {
         public static bool ValidatePin(string pin)
         {
-            var isNumeric = false;
-            if (!string.IsNullOrEmpty(pin) && (pin.Length == 4 || pin.Length == 6))
-            {
-                isNumeric = int.TryParse(pin, out _);
-            }
-            return isNumeric;
+            var cleanPin = string.IsNullOrEmpty(pin) ? "" : pin;
+            var isValidLength = (cleanPin.Length == 4 || cleanPin.Length == 6);
+            return isValidLength && cleanPin.All(t => t <= '9' && t >= '0');
         }
     }
 }
