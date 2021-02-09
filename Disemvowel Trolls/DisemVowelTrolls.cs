@@ -7,7 +7,7 @@ namespace Disemvowel_Trolls
     {
         public static string Disemvowel(string str)
         {
-            return new string(str.Where(x => "aeiou".IndexOf(x.ToString(), StringComparison.InvariantCultureIgnoreCase) < 0).ToArray());
+            return string.Concat(str.Where(ch => !"aeiouAEIOU".Contains(ch)));
         }
     }
 }
