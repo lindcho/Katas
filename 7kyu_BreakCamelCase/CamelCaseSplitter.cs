@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace _7kyu_BreakCamelCase
 {
@@ -6,13 +7,7 @@ namespace _7kyu_BreakCamelCase
     {
         public static string BreakCamelCase(string str)
         {
-            if (string.IsNullOrEmpty(str))
-                return str;
-
-            return string.Concat(str
-                .Select(c => char.IsUpper(c)
-                    ? " " + c.ToString()
-                    : c.ToString()));
+            return string.IsNullOrEmpty(str) ? str : Regex.Replace(str, @"(\p{Lu})", " $1");
         }
     }
 }
