@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 
 namespace _7kyu_AlternateCapitalization
@@ -7,44 +6,11 @@ namespace _7kyu_AlternateCapitalization
     {
         public static string[] Capitalize(string s)
         {
-            var output = "";
-            var result = new List<string>();
-            var charArray = s.ToCharArray();
-            var counter = 1;
-            while (counter <= 2)
+            return new[]
             {
-                for (var i = 0; i < s.Length; i++)
-                {
-                    if (counter == 1)
-                    {
-                        if (i % 2 == 0)
-                        {
-                            output += charArray[i].ToString().ToUpper();
-                        }
-                        else
-                        {
-                            output += charArray[i].ToString().ToLower();
-                        }
-                    }
-                    else
-                    {
-                        if (i % 2 != 0)
-                        {
-                            output += charArray[i].ToString().ToUpper();
-                        }
-                        else
-                        {
-                            output += charArray[i].ToString().ToLower();
-                        }
-                    }
-
-                }
-                result.Add(output);
-                counter++;
-                output = string.Empty;
-            }
-
-            return result.ToArray();
+                string.Concat(s.Select((x, i) => i % 2 == 0 ? char.ToUpper(x) : x)),
+                string.Concat(s.Select((x, i) => i % 2 == 1 ? char.ToUpper(x) : x))
+            };
         }
     }
 
