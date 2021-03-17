@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace _7kyu_NumberOfPeopleInABus
 {
@@ -7,15 +7,7 @@ namespace _7kyu_NumberOfPeopleInABus
     {
         public static int Number(List<int[]> peopleListInOut)
         {
-            var totalIn = 0;
-            var totalOut = 0;
-            foreach (var people in peopleListInOut)
-            {
-                totalIn += people[0];
-                totalOut += people[1];
-            }
-
-            return Math.Abs(totalIn - totalOut);
+            return peopleListInOut.Sum(item => item[0] - item[1]);
         }
     }
 }
