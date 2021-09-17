@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 namespace AtmPinKataTests
 {
+    [TestFixture]
     public class Tests
     {
         [Test, Description("ValidatePin should return false for pins with length other than 4 or 6")]

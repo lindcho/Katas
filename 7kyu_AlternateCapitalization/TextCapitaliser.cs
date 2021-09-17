@@ -13,7 +13,4 @@ namespace _7kyu_AlternateCapitalization
             };
         }
     }
-
-
-
 }

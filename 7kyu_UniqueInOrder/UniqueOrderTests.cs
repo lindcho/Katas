@@ -1,8 +1,8 @@
-using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace _7kyu_UniqueInOrder
 {
+    [TestFixture]
     public class UniqueOrderTests
     {
         [Test]

@@ -5,14 +5,12 @@ namespace BowlingGameTests
 {
     public class BowlingGameTests
     {
-
         [Test]
         public void TestBowlingGameClass()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
-
             // assert
             Assert.That(sut, Is.InstanceOf<Game>());
         }
@@ -21,7 +19,7 @@ namespace BowlingGameTests
         public void TestGutterGame_ShouldReturn0()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             const int n = 20;
             const int pins = 0;
             // act
@@ -35,7 +33,7 @@ namespace BowlingGameTests
         public void TestKnockingDown1PinEachTime_Returns20()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             const int n = 20;
             const int pins = 1;
@@ -48,7 +46,7 @@ namespace BowlingGameTests
         public void TestKnockingDown2Pins_Returns40()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             RollMany(sut, 20, 2);
             // assert
@@ -59,7 +57,7 @@ namespace BowlingGameTests
         public void TestOneSpare()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             RollSpare(sut); // we roll spare
             sut.Roll(3);
@@ -72,7 +70,7 @@ namespace BowlingGameTests
         public void TestOneStrike_ReturnScore()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             RollStrike(sut); // we roll strike
             sut.Roll(3);
@@ -86,7 +84,7 @@ namespace BowlingGameTests
         public void TestPerfectGame()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             RollMany(sut, 12, 10);
             // assert
@@ -97,7 +95,7 @@ namespace BowlingGameTests
         public void TestRandomGameWithNoExtraRoll()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             var randomRolls = new int[] { 1, 3, 7, 3, 10, 1, 7, 5, 2, 5, 3, 8, 2, 8, 2, 10, 9, 0 };
             foreach (var randomRoll in randomRolls)
@@ -112,7 +110,7 @@ namespace BowlingGameTests
         public void TestRandomGameWithSpareThenStrikeAtEnd()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             var randomRollsWithSpareAndStrike = new int[] { 1, 3, 7, 3, 10, 1, 7, 5, 2, 5, 3, 8, 2, 8, 2, 10, 9, 1, 10 };
             foreach (var randomRoll in randomRollsWithSpareAndStrike)
@@ -127,7 +125,7 @@ namespace BowlingGameTests
         public void TestRandomGameWithTwoSparesThenMultipleStrikesAtEnd()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             var randomRollsWithSpareAndStrike = new int[] { 1, 3, 7, 3, 10, 7, 5, 2, 5, 5, 3, 8, 2, 10, 9, 1, 10, 10, 10, 10, 10 };
             foreach (var randomRoll in randomRollsWithSpareAndStrike)
@@ -142,7 +140,7 @@ namespace BowlingGameTests
         public void TestRandomGameWithThreeStrikesAtEnd()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             var randomRollsWith3Strike = new int[] { 1, 3, 7, 3, 10, 1, 7, 5, 2, 5, 3, 8, 2, 8, 2, 10, 10, 10, 10 };
             foreach (var randomRoll in randomRollsWith3Strike)
@@ -157,7 +155,7 @@ namespace BowlingGameTests
         public void TestRandomGameWithSparesOnly()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             var randomRollsWithSparesOnly = new int[] { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
             foreach (var randomRoll in randomRollsWithSparesOnly)
@@ -172,7 +170,7 @@ namespace BowlingGameTests
         public void TestRandomGameWithStrikesOnly()
         {
             // arrange
-            var sut = new Game();
+            var sut = CreateSut();
             // act
             var randomRollsWithStrikesOnly = new int[] { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
             foreach (var randomRoll in randomRollsWithStrikesOnly)
@@ -183,6 +181,10 @@ namespace BowlingGameTests
             Assert.That(270, Is.EqualTo(sut.Score()));
         }
 
+        private static Game CreateSut()
+        {
+            return new Game();
+        }
 
         private static void RollStrike(Game sut)
         {
