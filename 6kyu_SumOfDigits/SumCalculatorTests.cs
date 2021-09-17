@@ -5,19 +5,6 @@ namespace _6kyu_SumOfDigits
     [TestFixture]
     public class SumCalculatorTests
     {
-        //private SumCalculator num;
-
-        //[SetUp]
-        //public void SetUp()
-        //{
-        //    num = new SumCalculator();
-        //}
-
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    num = null;
-        //}
 
         [TestCase(1, 1)]
         [TestCase(5, 5)]
@@ -33,7 +20,7 @@ namespace _6kyu_SumOfDigits
         }
 
         [Test]
-        public void Tests()
+        public void RandomTests()
         {
             var sut = CreateSut();
             Assert.AreEqual(7, sut.DigitalRoot(16));

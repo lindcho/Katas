@@ -2,6 +2,7 @@ using NUnit.Framework;
 
 namespace MoneyKata
 {
+    [TestFixture]
     public class MoneyTests
     {
         [TestCase]

@@ -39,16 +39,6 @@ namespace PasswordVerifierTests
             exception.Message.Should().Be("Rule Violation. password should have one uppercase letter at least.");
         }
 
-        [Test]
-        public void Verify_GivenPasswordDoesNotContainAtleastUpperCase_ShouldThrowException()
-        {
-            //arrange
-            var sut = new PasswordVerifier();
-            //act
-            var exception = Assert.Throws<System.Exception>(() => sut.Verify("Abcde1234"));
-            //assert
-            exception.Message.Should().Be("Rule Violation. password should have one uppercase letter at least.");
-        }
 
     }
 }

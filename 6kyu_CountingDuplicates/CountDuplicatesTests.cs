@@ -2,6 +2,7 @@ using NUnit.Framework;
 
 namespace _6kyu_CountingDuplicates
 {
+    [TestFixture]
     public class CountDuplicatesTests
     {
         [Test]

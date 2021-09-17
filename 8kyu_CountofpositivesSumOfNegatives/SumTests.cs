@@ -2,6 +2,7 @@ using NUnit.Framework;
 
 namespace _8kyu_CountofpositivesSumOfNegatives
 {
+    [TestFixture]
     public class SumTests
     {
         [Test]
